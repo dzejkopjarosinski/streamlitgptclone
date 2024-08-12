@@ -1,6 +1,15 @@
 import openai
 import streamlit as st
 
+# Add custom CSS to hide the share, star, and GitHub icons
+hide_icons = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_icons, unsafe_allow_html=True)
+
 st.title("ChatGPT-like clone")
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
